@@ -1,5 +1,27 @@
 # Gasi's Demo Recorder
 
+## Requirements
+
+- Windows
+- Python 3.11 or newer
+- HLAE
+- FFmpeg
+
+## Getting Python
+
+If Python is not installed yet:
+
+1. Go to https://www.python.org/downloads/
+2. Download the latest Python 3 release for Windows.
+3. Run the installer.
+4. Make sure `Add python.exe to PATH` is checked before you click Install.
+
+If you already have Python installed, you can check it by opening Command Prompt or PowerShell and running:
+
+```bash
+python --version
+```
+
 ## Disclaimer
 
 This tool uses HLAE, which Valve can technically consider a cheat.
