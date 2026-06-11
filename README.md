@@ -1,4 +1,4 @@
-# Gasi's Demo Recorder
+# Gasi's Demo Tool
 
 ## Requirements
 
