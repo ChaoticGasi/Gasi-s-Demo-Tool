@@ -1,17 +1,55 @@
 # Gasi's Demo Tool
 <img width="1592" height="1006" alt="Screenshot 2026-06-11 181601" src="https://github.com/user-attachments/assets/da6a519f-ddca-40fd-9e5d-8bbfbcc05331" />
-<img width="1918" height="1078" alt="Screenshot 2026-06-11 181716" src="https://github.com/user-attachments/assets/0aef4022-9cfa-4ff4-81dd-55c694887aa2" />
+<img width="1917" height="1077" alt="Updated Overlay" src="https://github.com/user-attachments/assets/587e55a5-1d21-431c-a357-190c5ab38b0d" />
 <img width="1920" height="1080" alt="video_with_audio - frame at 0m25s" src="https://github.com/user-attachments/assets/efa87294-aa5b-404a-acb1-0070f6af5a8c" />
 
 
-## Requirements
+## Disclaimer
+
+This tool uses HLAE, which Valve can technically consider a cheat.
+
+Use it only in Steam Offline Mode and only for recording demo files. Do not connect to online servers, especially VAC-secured servers, while using HLAE or this tool.
+
+This tool can also change CS2 settings while preparing the recording view. Save any settings you care about before starting.
+
+Use this tool at your own risk.
+
+## Download Or Source Code
+
+You can use the tool in two ways:
+
+- Download the ready-to-use Windows app from the **Releases** tab.
+- Download the source code and run or compile it yourself.
+
+The release build does not require Python. The source code version does require Python.
+
+## Use The Ready EXE
+
+1. Download the latest release from the **Releases** tab.
+2. Extract the downloaded archive.
+3. Start `GasisDemoTool.exe`.
+4. Accept the Windows administrator prompt.
+5. Select a `.dem` file.
+6. Check that Steam, HLAE, CS2, and FFmpeg show green status.
+7. Pick your recording options in the **Recording** tab.
+8. Click **Open demo in HLAE**.
+9. Wait until the overlay says the demo is loaded.
+10. Use the overlay or press `F10` to start recording and `F10` again to stop.
+11. Open the **Encoding** tab, choose the take, adjust **Extra audio trim ms** if needed, and click **Encode / mux**.
+12. Finished recordings are written to the `recordings` folder next to the EXE.
+
+When moving or sharing the release build, keep the whole `GasisDemoTool` folder together. Do not move only the `.exe`, because it needs the bundled `_internal` folder beside it.
+
+## Use The Source Code
+
+### Requirements
 
 - Windows
 - Python 3.11 or newer
 - HLAE
 - FFmpeg
 
-## Getting Python
+### Getting Python
 
 If Python is not installed yet:
 
@@ -26,27 +64,51 @@ If you already have Python installed, you can check it by opening Command Prompt
 python --version
 ```
 
-## Disclaimer
+### Run From Source
 
-This tool uses HLAE, which Valve can technically consider a cheat.
+1. Download or clone the source code.
+2. Open the project folder.
+3. Start the app with `start-gui.cmd`.
+4. Select a `.dem` file.
+5. Check that Steam, HLAE, CS2, and FFmpeg show green status.
+6. Pick your recording options in the **Recording** tab.
+7. Click **Open demo in HLAE**.
+8. Wait until the overlay says the demo is loaded.
+9. Use the overlay or press `F10` to start recording and `F10` again to stop.
+10. To change non-live visual options while CS2 is already open, update the GUI options and click **Refresh in game**. If needed, press `F11` inside CS2.
+11. Open the **Encoding** tab, choose the take, adjust **Extra audio trim ms** if needed, and click **Encode / mux**.
+12. Finished recordings are written to the `recordings` folder.
 
-Use it only in Steam Offline Mode and only for recording demo files. Do not connect to online servers, especially VAC-secured servers, while using HLAE or this tool.
+## Compile The EXE Yourself
 
-This tool can also change CS2 settings while preparing the recording view. Save any settings you care about before starting.
+You can build a standalone Windows app with PyInstaller.
 
-Use this tool at your own risk.
+1. Open PowerShell in the project folder.
+2. Install PyInstaller:
 
-## How To Use The GUI
+```bash
+python -m pip install pyinstaller
+```
 
-1. Start the app with `start-gui.cmd`.
-2. Select a `.dem` file.
-3. Check that Steam, HLAE, CS2, and FFmpeg show green status.
-4. Pick your recording options in the **Recording** tab.
-5. Click **Open demo in HLAE**.
-6. In CS2, press `F10` to start recording and `F10` again to stop.
-7. To change visual options while CS2 is already open, update the GUI options and click **Refresh in game**. If needed, press `F11` inside CS2.
-8. Open the **Encoding** tab, choose the take, adjust **Extra audio trim ms** if needed, and click **Encode / mux**.
-9. Finished recordings are written to the `recordings` folder.
+3. Build the app:
+
+```bash
+python -m PyInstaller -y --noconsole --onedir --uac-admin --name GasisDemoTool --icon App\assets\app-icon.ico --add-data "App\assets;assets" App\desktop_app.py
+```
+
+4. After the build finishes, the app will be in:
+
+```text
+dist\GasisDemoTool\GasisDemoTool.exe
+```
+
+5. Create an empty `recordings` folder next to the EXE if it does not exist yet:
+
+```bash
+mkdir dist\GasisDemoTool\recordings
+```
+
+When sharing the compiled app, share the whole `dist\GasisDemoTool` folder. Do not share only the `.exe`, because it needs the bundled `_internal` folder beside it.
 
 ## Included Tools
 
