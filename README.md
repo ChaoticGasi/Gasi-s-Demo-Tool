@@ -1,6 +1,7 @@
 # Gasi's Demo Tool
 
-[![Tutorial](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)]([https://www.youtube.com/watch?v=StTqXEQ2l-Y](https://www.youtube.com/watch?v=x-xXf5EvGBk) "Tutorial")
+[![TUTORIAL VIDEO](http://img.youtube.com/vi/x-xXf5EvGBk/0.jpg)](http://www.youtube.com/watch?v=x-xXf5EvGBk "
+How to Record CS2 Highlights for FREE (Automatic Demo Recorder)")
 
 <img width="1592" height="1006" alt="Screenshot 2026-06-11 181601" src="https://github.com/user-attachments/assets/da6a519f-ddca-40fd-9e5d-8bbfbcc05331" />
 <img width="2555" height="1435" alt="Screenshot 2026-06-21 233520" src="https://github.com/user-attachments/assets/51a38f6b-8bab-49da-a28c-c1433806576c" />
